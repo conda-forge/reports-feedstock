@@ -1,6 +1,6 @@
 {% set name = "reports" %}
-{% set version = "0.3.1" %}
-{% set sha256 = "72b5d5d1f8a452f4c8b1f69862c2d6bc4ac953490273b23b232dc35692c01755" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "cd95e7fb612480c85e26c3c6d63364d1976a6ec81dbb05fa068f1bd886c5d9c1" %}
 
 package:
   name: {{ name }}
@@ -13,8 +13,8 @@ source:
 
 build:
   noarch: python
-  number: 1
-  script: python -m pip install --no-deps --ignore-installed .
+  number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
@@ -37,14 +37,14 @@ test:
     - reports.resources
 
 about:
-  home: 'http://github.com/cokelaer/reports/'
+  home: http://github.com/cokelaer/reports/
   license: BSD 3-clause
   license_family: BSD
   license_file: LICENSE
   doc_url: http://reports.readthedocs.io/en/latest
   dev_url: https://github.com/cokelaer/reports
 
-  summary: 'Quickly create HTML reports using a set of JINJA templates'
+  summary: Quickly create HTML reports using a set of JINJA templates
 
 extra:
   recipe-maintainers:
